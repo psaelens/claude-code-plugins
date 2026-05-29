@@ -1,0 +1,10 @@
+{
+  "name": "demo",
+  "version": "0.1.0",
+  "description": "A tech jargon explainer plugin showcasing Claude Code plugin capabilities: skills, MCP servers, and agents.",
+  "author": {
+    "name": "Pierre Saelens",
+    "email": "psaelens@gmail.com"
+  },
+  "keywords": ["demo", "jargon", "explainer", "wikipedia", "plain-language", "showcase"]
+}
