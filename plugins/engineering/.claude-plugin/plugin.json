@@ -1,0 +1,10 @@
+{
+  "name": "engineering",
+  "version": "0.1.0",
+  "description": "Engineering toolkit: skills for software architects, developers, and technical writers.",
+  "author": {
+    "name": "Pierre Saelens",
+    "email": "psaelens@gmail.com"
+  },
+  "keywords": ["engineering", "writing", "documentation", "diataxis", "readme", "deslopify"]
+}
