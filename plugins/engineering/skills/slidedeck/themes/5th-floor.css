@@ -1,0 +1,134 @@
+/**
+ * 5th Floor theme — internal engineering team. Clean dark-accent style.
+ */
+
+:root {
+    --f-primary: #0EA5E9;
+    --f-accent: #06B6D4;
+    --f-text: #111827;
+    --f-text-muted: #6B7280;
+    --f-bg: #F8FAFC;
+    --f-white: #FFFFFF;
+    --f-border: #E2E8F0;
+    --f-positive: #22C55E;
+    --f-warning: #EAB308;
+    --f-danger: #EF4444;
+    --f-info: #6366F1;
+}
+
+.reveal-viewport {
+    background: var(--f-bg);
+}
+
+.reveal {
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Courier New", monospace;
+    font-size: 36px;
+    color: var(--f-text);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    margin: 0 0 20px 0;
+    color: var(--f-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: none;
+    text-shadow: none;
+}
+
+.reveal h1 { font-size: 2.4em; }
+.reveal h2 { font-size: 1.8em; }
+.reveal h3 { font-size: 1.3em; }
+.reveal h4 { font-size: 1.1em; }
+
+.reveal p { margin: 20px 0; line-height: 1.6; }
+
+.reveal strong, .reveal b {
+    font-weight: 700;
+    color: var(--f-text);
+}
+
+.reveal ol, .reveal dl, .reveal ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1em;
+}
+
+.reveal ul { list-style-type: disc; }
+.reveal ol { list-style-type: decimal; }
+.reveal ul ul, .reveal ul ol, .reveal ol ol, .reveal ol ul {
+    display: block;
+    margin-left: 40px;
+}
+.reveal li { margin: 10px 0; }
+
+.reveal blockquote {
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+    padding: 16px 24px;
+    font-style: italic;
+    background: var(--f-white);
+    border-left: 4px solid var(--f-primary);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    border-radius: 0 4px 4px 0;
+}
+
+.reveal pre {
+    width: 90%;
+    margin: 20px auto;
+    font-size: 0.55em;
+    background: #1E293B;
+    color: #E2E8F0;
+    border: none;
+    border-radius: 6px;
+}
+
+.reveal code {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    background: #1E293B;
+    color: var(--f-primary);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.reveal pre code {
+    display: block;
+    padding: 15px;
+    overflow: auto;
+    max-height: 400px;
+    color: #E2E8F0;
+    background: transparent;
+}
+
+.reveal a { color: var(--f-primary); text-decoration: none; }
+.reveal a:hover { color: var(--f-accent); }
+
+.reveal .controls { color: var(--f-primary); }
+.reveal .progress { background: var(--f-border); color: var(--f-primary); }
+
+.reveal section img {
+    border: 1px solid var(--f-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.reveal section img.plain { border: none; box-shadow: none; background: transparent; }
+
+.reveal .bg-white {
+    background-color: var(--f-white) !important;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--f-border);
+}
+
+.reveal .highlight {
+    background-color: var(--f-primary);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.reveal .text-primary { color: var(--f-primary) !important; }
+.reveal .text-info    { color: var(--f-info) !important; }
+.reveal .text-success { color: var(--f-positive) !important; }
+.reveal .text-warning { color: var(--f-warning) !important; }
+.reveal .text-danger  { color: var(--f-danger) !important; }
