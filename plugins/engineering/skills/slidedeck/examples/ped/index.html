@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Exp&eacute;rience D&eacute;veloppeur SPW - Top Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="theme-spw.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ===================== 1. TITRE ===================== -->
+            <section>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 30px;">
+                    <img src="img/wallonie_v.png" alt="Wallonie" style="height: 120px; border: none; box-shadow: none; background: transparent; margin: 0;" class="plain">
+                    <img src="img/Plateforme Exp%C3%A9rience D%C3%A9veloppeur.png" alt="Plateforme DevEx" style="height: 120px; border: none; box-shadow: none; background: transparent; margin: 0; border-radius: 12px;" class="plain">
+                </div>
+                <h1 style="font-size: 1.7em; margin-bottom: 10px;">Plateforme Exp&eacute;rience D&eacute;veloppeur</h1>
+                <h3 style="font-weight: 400; color: var(--spw-text-secondary);">&Eacute;tat des lieux &ndash; Vision &ndash; Options d'&eacute;volution</h3>
+                <div style="margin-top: 40px; padding: 12px 30px; display: inline-block; background: var(--spw-primary); color: white; border-radius: 4px; font-size: 0.7em;">
+                    Acc&eacute;l&eacute;rer la livraison de valeur tout en ma&icirc;trisant les co&ucirc;ts et la qualit&eacute;
+                </div>
+                <aside class="notes">
+                    Exemple oral :
+                    &laquo; Bonjour &agrave; tous, merci d'avoir pris le temps pour cette pr&eacute;sentation. Aujourd'hui je vais vous parler de la plateforme Exp&eacute;rience D&eacute;veloppeur qu'on est en train de construire au SPW Digital. L'objectif est simple : permettre &agrave; nos &eacute;quipes de d&eacute;veloppement de livrer plus vite, avec plus de qualit&eacute;, tout en ma&icirc;trisant les co&ucirc;ts. Je vais vous montrer o&ugrave; on en est, ce qu'on vise, et comment on pourrait acc&eacute;l&eacute;rer. &raquo;
+                </aside>
+            </section>
+
+            <!-- ===================== 2. AGENDA ===================== -->
+            <section>
+                <h2>Agenda</h2>
+                <ol style="font-size: 0.9em;">
+                    <li>Le point de vue du d&eacute;veloppeur</li>
+                    <li>Qu'est-ce qu'une plateforme Expérience Développeur (DevEx) ?</li>
+                    <li>Vision &amp; objectifs</li>
+                    <li>Ce que le SPW Digital a d&eacute;j&agrave; aujourd'hui</li>
+                    <li>Offre NSI : analyse</li>
+                    <li>Approche hybride propos&eacute;e</li>
+                    <li>Conclusion &amp; prochaines étapes</li>
+                </ol>
+                <aside class="notes">
+                    Exemple oral :
+                    &laquo; Voici le fil conducteur. On va d'abord se mettre dans la peau d'un d&eacute;veloppeur qui arrive au SPW. Ensuite, je vous expliquerai ce qu'est concr&egrave;tement une plateforme d&eacute;veloppeur. On fera le point sur ce qu'on a d&eacute;j&agrave; construit, puis on parlera de notre vision. Et enfin, on regardera comment l'offre NSI pourrait s'int&eacute;grer dans notre approche. &raquo;
+                </aside>
+            </section>
+
+            <!-- ===================== 3. POINT DE VUE DÉVELOPPEUR ===================== -->
+            <section>
+                <section>
+                    <h2>Le point de vue du d&eacute;veloppeur</h2>
+                    <p style="margin-top: 40px; font-style: italic;">Une bonne exp&eacute;rience d&eacute;veloppeur = plus de productivit&eacute;, moins de friction.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Avant de parler technique, mettons-nous un instant &agrave; la place d'un d&eacute;veloppeur qui arrive dans un projet SPW. Qu'est-ce qu'il attend ? Qu'est-ce qui fait qu'il va &ecirc;tre productif rapidement ou pas ? C'est &ccedil;a l'exp&eacute;rience d&eacute;veloppeur. Et c'est un vrai levier de performance. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Persona -->
+                <section>
+                    <h3>Persona : D&eacute;veloppeur SPW</h3>
+                    <div class="bg-white" style="margin: 25px auto; padding: 25px; max-width: 750px;">
+                        <p style="font-size: 0.85em; margin-bottom: 20px;">Ses attentes cl&eacute;s :</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-size: 0.7em;">
+                            <span style="background: #f5f5f5; padding: 12px 20px; border-radius: 8px; border-left: 3px solid var(--spw-positive);">D&eacute;marrer vite</span>
+                            <span style="background: #f5f5f5; padding: 12px 20px; border-radius: 8px; border-left: 3px solid var(--spw-info);">Standards clairs</span>
+                            <span style="background: #f5f5f5; padding: 12px 20px; border-radius: 8px; border-left: 3px solid var(--spw-warning);">Outils int&eacute;gr&eacute;s</span>
+                            <span style="background: #f5f5f5; padding: 12px 20px; border-radius: 8px; border-left: 3px solid var(--spw-primary);">Autonomie</span>
+                            <span style="background: #f5f5f5; padding: 12px 20px; border-radius: 8px; border-left: 3px solid #9C27B0;">Support &amp; accompagnement</span>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Un d&eacute;veloppeur type au SPW, qu'est-ce qu'il veut ? D'abord, d&eacute;marrer vite &mdash; ne pas passer trois semaines &agrave; configurer son poste. Il veut des standards clairs pour ne pas devoir r&eacute;inventer la roue. Des outils int&eacute;gr&eacute;s qui fonctionnent ensemble. De l'autonomie, pouvoir avancer sans attendre des validations &agrave; chaque &eacute;tape. Et du support quand il est bloqu&eacute;. C'est &ccedil;a une bonne exp&eacute;rience d&eacute;veloppeur. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Problèmes aujourd'hui -->
+                <section data-visibility="hidden">
+                    <h3>Probl&egrave;mes rencontr&eacute;s aujourd'hui</h3>
+                    <div style="text-align: left; font-size: 0.7em; max-width: 750px; margin: 25px auto;">
+                        <div class="bg-white" style="padding: 25px;">
+                            <p><strong class="text-danger">Onboarding chronophage</strong></p>
+                            <ul style="font-size: 0.9em;">
+                                <li>Formulaires Excel pour demander des environnements</li>
+                                <li>Processus lents de provisionnement (plusieurs semaines)</li>
+                                <li>Documentation &eacute;parpill&eacute;e et parfois obsol&egrave;te</li>
+                            </ul>
+                            <p style="margin-top: 15px;"><strong class="text-danger">Manque de visibilit&eacute;</strong></p>
+                            <ul style="font-size: 0.9em;">
+                                <li>Pas d'acc&egrave;s direct aux logs de production</li>
+                                <li>M&eacute;triques et dashboards inexistants ou inaccessibles</li>
+                            </ul>
+                            <p style="margin-top: 15px;"><strong class="text-danger">D&eacute;ploiement limit&eacute;</strong></p>
+                            <ul style="font-size: 0.9em;">
+                                <li>Pipelines CI/CD s'arr&ecirc;tent &agrave; l'environnement TEST</li>
+                                <li>Absence de self-service pour provisionner des environnements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; color: var(--spw-negative); margin-top: 15px;">
+                        <strong>Impact : 2-4 semaines avant qu'un d&eacute;veloppeur soit pleinement productif</strong>
+                    </p>
+                </section>
+
+                <!-- Chiffres clés (repris du user-journey) -->
+                <section>
+                    <h3>Les Chiffres Cl&eacute;s</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 30px auto; max-width: 820px;">
+                        <div style="flex: 1; min-width: 180px; background: var(--spw-white); border-radius: 8px; padding: 22px 18px; text-align: center; border-top: 4px solid var(--spw-positive);">
+                            <p style="font-size: 0.6em; color: var(--spw-gray-medium); margin: 0;">Temps productivit&eacute;</p>
+                            <p style="font-size: 1.6em; color: var(--spw-positive); margin: 10px 0 5px; font-weight: 700;">-75%</p>
+                            <p style="font-size: 0.55em; margin: 0;"><span style="color: #E0062A;">3-4 sem.</span> &rarr; <span style="color: #03C700;">1 sem.</span></p>
+                        </div>
+                        <div style="flex: 1; min-width: 180px; background: var(--spw-white); border-radius: 8px; padding: 22px 18px; text-align: center; border-top: 4px solid var(--spw-positive);">
+                            <p style="font-size: 0.6em; color: var(--spw-gray-medium); margin: 0;">Temps senior mobilis&eacute;</p>
+                            <p style="font-size: 1.6em; color: var(--spw-positive); margin: 10px 0 5px; font-weight: 700;">-87%</p>
+                            <p style="font-size: 0.55em; margin: 0;"><span style="color: #E0062A;">10-15h</span> &rarr; <span style="color: #03C700;">1-2h</span></p>
+                        </div>
+                        <div style="flex: 1; min-width: 180px; background: var(--spw-white); border-radius: 8px; padding: 22px 18px; text-align: center; border-top: 4px solid var(--spw-positive);">
+                            <p style="font-size: 0.6em; color: var(--spw-gray-medium); margin: 0;">Satisfaction d&eacute;veloppeur</p>
+                            <p style="font-size: 1.6em; color: var(--spw-positive); margin: 10px 0 5px; font-weight: 700;">+125%</p>
+                            <p style="font-size: 0.55em; margin: 0;"><span style="color: #E0062A;">4/10</span> &rarr; <span style="color: #03C700;">9/10</span></p>
+                        </div>
+                        <div style="flex: 1; min-width: 180px; background: var(--spw-white); border-radius: 8px; padding: 22px 18px; text-align: center; border-top: 4px solid var(--spw-positive);">
+                            <p style="font-size: 0.6em; color: var(--spw-gray-medium); margin: 0;">Premier d&eacute;ploiement</p>
+                            <p style="font-size: 1.6em; color: var(--spw-positive); margin: 10px 0 5px; font-weight: 700;">-94%</p>
+                            <p style="font-size: 0.55em; margin: 0;"><span style="color: #E0062A;">J+17</span> &rarr; <span style="color: #03C700;">J+1</span></p>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        Concrètement, quand un nouveau projet démarre, la première livraison arrive 3 semaines plus tôt. Ça veut dire que le métier voit du concret plus vite.
+                        Exemple oral :
+                        &laquo; On a mod&eacute;lis&eacute; le parcours d'un d&eacute;veloppeur type, Alex, qui arrive au SPW. Sans plateforme, il lui faut 3 &agrave; 4 semaines avant d'&ecirc;tre vraiment productif. Avec la plateforme, on tombe &agrave; une semaine. Le temps qu'un d&eacute;veloppeur senior doit consacrer &agrave; l'accompagnement passe de 10-15 heures &agrave; 1-2 heures. La satisfaction passe de 4 sur 10 &agrave; 9 sur 10. Et le premier d&eacute;ploiement passe de J+17 &agrave; J+1. Ces chiffres sont d&eacute;taill&eacute;s dans une pr&eacute;sentation d&eacute;di&eacute;e que je peux vous partager. &raquo;
+                    </aside>
+                </section>
+            </section>
+
+            <!-- ===================== 4. QU'EST-CE QU'UNE PLATEFORME DEVEX ? ===================== -->
+            <section>
+                <section>
+                    <h2>Qu'est-ce qu'une plateforme développeur ?</h2>
+                    <p style="margin-top: 40px; font-style: italic;">Pas un outil unique &ndash; un produit interne au service des &eacute;quipes.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Alors une plateforme d&eacute;veloppeur, c'est quoi exactement ? Ce n'est pas un outil unique qu'on ach&egrave;te et qu'on installe. C'est un produit interne, au service des &eacute;quipes. C'est aussi un outil de gouvernance : &ccedil;a permet de s'assurer que tout le monde suit les m&ecirc;mes standards, sans pour autant brider l'autonomie. &raquo;
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Un &eacute;cosyst&egrave;me complet</h3>
+                    <p style="font-size: 0.7em; margin-bottom: 20px;">Au-del&agrave; d'un simple framework de briques r&eacute;utilisables :</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 20px auto; max-width: 800px; font-size: 0.65em;">
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-info); min-width: 200px; flex: 1;">
+                            <strong>Outillage technique</strong><br/>
+                            Outils de d&eacute;veloppement, CI/CD, infrastructures
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-positive); min-width: 200px; flex: 1;">
+                            <strong>Documentation structur&eacute;e</strong><br/>
+                            Guides, tutoriels, r&eacute;f&eacute;rences techniques
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-warning); min-width: 200px; flex: 1;">
+                            <strong>Standards &amp; Qualit&eacute;</strong><br/>
+                            Patterns, testing, bonnes pratiques
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-primary); min-width: 200px; flex: 1;">
+                            <strong>Support &amp; Accompagnement</strong><br/>
+                            Canaux de communication, assistance
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid #9C27B0; min-width: 200px; flex: 1;">
+                            <strong>Culture DevSecOps</strong><br/>
+                            Feedback continu, am&eacute;lioration collaborative
+                        </div>
+                    </div>
+                    <p style="font-size: 0.7em; margin-top: 20px; font-style: italic;">
+                        Faciliter le quotidien du d&eacute;veloppeur tout en assurant coh&eacute;rence, qualit&eacute; et conformit&eacute;.
+                    </p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Concr&egrave;tement, une plateforme d&eacute;veloppeur c'est un &eacute;cosyst&egrave;me qui couvre cinq dimensions. L'outillage technique &mdash; les pipelines CI/CD, l'infra. La documentation structur&eacute;e &mdash; pas des wikis &eacute;parpill&eacute;s, mais un portail organis&eacute;. Des standards de qualit&eacute; &mdash; des patterns, des bonnes pratiques partag&eacute;es. Du support et de l'accompagnement humain. Et une culture DevSecOps avec du feedback continu. C'est bien plus qu'un simple framework de briques r&eacute;utilisables. &raquo;
+                    </aside>
+                </section>
+            </section>
+
+            <!-- ===================== 6. VISION & OBJECTIFS ===================== -->
+            <section>
+                <section data-visibility="hidden">
+                    <h2>Vision &amp; Objectifs</h2>
+                    <p style="margin-top: 40px; font-style: italic;">Une plateforme durable, pas une solution jetable.</p>
+                </section>
+
+                <!-- Vision -->
+                <section>
+                    <h3>Notre Vision</h3>
+                    <blockquote style="font-size: 0.8em; width: 85%; border-left-color: var(--spw-info);">
+                        <p>Permettre aux &eacute;quipes de d&eacute;veloppement de <strong>livrer plus vite, plus souvent</strong>, avec un <strong>niveau de qualit&eacute; et de s&eacute;curit&eacute; garanti</strong>.</p>
+                    </blockquote>
+                    <div style="text-align: left; font-size: 0.7em; max-width: 650px; margin: 25px auto;">
+                        <p style="margin: 8px 0;"><strong style="color: var(--spw-positive);">Onboarding rapide</strong> &mdash; un d&eacute;veloppeur productif en jours, pas en semaines</p>
+                        <p style="margin: 8px 0;"><strong style="color: var(--spw-info);">Pratiques standardis&eacute;es</strong> &mdash; un socle commun qui r&eacute;duit les frictions entre projets</p>
+                        <p style="margin: 8px 0;"><strong style="color: var(--spw-warning);">Autonomie des &eacute;quipes</strong> &mdash; moins de d&eacute;pendances, plus de valeur livr&eacute;e</p>
+                    </div>
+                    <p style="font-size: 0.65em; margin-top: 20px; color: var(--spw-gray-medium);">
+                        Une strat&eacute;gie de transformation num&eacute;rique qui place le d&eacute;veloppeur au c&oelig;ur de la cr&eacute;ation de valeur.
+                    </p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Notre vision tient en une phrase : permettre aux &eacute;quipes de livrer plus vite, plus souvent, avec un niveau de qualit&eacute; et de s&eacute;curit&eacute; garanti. Concr&egrave;tement, &ccedil;a veut dire trois choses. Un onboarding rapide &mdash; un d&eacute;veloppeur productif en jours, pas en semaines. Des pratiques standardis&eacute;es &mdash; un socle commun pour r&eacute;duire la friction quand on passe d'un projet &agrave; l'autre. Et l'autonomie des &eacute;quipes &mdash; moins de d&eacute;pendances, plus de valeur livr&eacute;e. C'est une strat&eacute;gie de transformation qui place le d&eacute;veloppeur au centre. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Objectifs -->
+                <section>
+                    <h3>Objectifs</h3>
+                    <div style="text-align: left; font-size: 0.65em; max-width: 800px; margin: 20px auto;">
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <div class="bg-white" style="flex: 1; min-width: 220px; padding: 18px;">
+                                <h4 style="color: var(--spw-positive); font-size: 1.1em;">R&eacute;duire l'onboarding</h4>
+                                <ul style="font-size: 0.95em;">
+                                    <li>Documentation claire et accessible</li>
+                                    <li>Environnements pr&eacute;-configur&eacute;s</li>
+                                    <li>Exemples pr&ecirc;ts &agrave; l'emploi</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white" style="flex: 1; min-width: 220px; padding: 18px;">
+                                <h4 style="color: var(--spw-primary); font-size: 1.1em;">Standardiser DevSecOps</h4>
+                                <ul style="font-size: 0.95em;">
+                                    <li>Pipelines CI/CD standardis&eacute;s</li>
+                                    <li>Scans auto s&eacute;curit&eacute; &amp; qualit&eacute;</li>
+                                    <li>Gestion des secrets &amp; GDPR</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white" style="flex: 1; min-width: 220px; padding: 18px;">
+                                <h4 style="color: var(--spw-info); font-size: 1.1em;">Acc&eacute;l&eacute;rer la production</h4>
+                                <ul style="font-size: 0.95em;">
+                                    <li>D&eacute;ploiements continus</li>
+                                    <li>Tests automatis&eacute;s</li>
+                                    <li>Provisionnement rapide</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white" style="flex: 1; min-width: 220px; padding: 18px;">
+                                <h4 style="color: var(--spw-warning); font-size: 1.1em;">Portail self-service</h4>
+                                <ul style="font-size: 0.95em;">
+                                    <li>Cr&eacute;ation projets en libre-service</li>
+                                    <li>Acc&egrave;s direct logs &amp; m&eacute;triques</li>
+                                    <li>Documentation centralis&eacute;e</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Pour atteindre cette vision, on a quatre objectifs concrets. R&eacute;duire l'onboarding gr&acirc;ce &agrave; de la documentation claire, des environnements pr&eacute;-configur&eacute;s, des exemples pr&ecirc;ts &agrave; l'emploi. Standardiser les pratiques DevSecOps &mdash; pipelines CI/CD, scans automatiques, gestion des secrets. Acc&eacute;l&eacute;rer la mise en production avec des d&eacute;ploiements continus et des tests automatis&eacute;s. Et &agrave; terme, un portail self-service o&ugrave; les &eacute;quipes peuvent cr&eacute;er un projet, acc&eacute;der aux logs, tout &ccedil;a de mani&egrave;re autonome. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Briques réutilisables -->
+                <section data-visibility="hidden">
+                    <h3>Briques R&eacute;utilisables Transversales</h3>
+                    <div style="display: flex; gap: 25px; justify-content: center; margin: 25px auto; font-size: 0.7em; max-width: 800px;">
+                        <div class="bg-white" style="flex: 1; padding: 20px;">
+                            <h4 style="color: var(--spw-info);">Briques &laquo; Plateforme &raquo;</h4>
+                            <p style="font-size: 0.85em; color: var(--spw-gray-medium);">Transverses techniques</p>
+                            <ul>
+                                <li><strong>Gestia/Keycloak</strong> : authentification &amp; autorisation</li>
+                                <li><strong>Apicurio</strong> : gestion des contrats d'API</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white" style="flex: 1; padding: 20px;">
+                            <h4 style="color: var(--spw-warning);">Briques &laquo; M&eacute;tier &raquo;</h4>
+                            <p style="font-size: 0.85em; color: var(--spw-gray-medium);">Services transverses SPW</p>
+                            <ul>
+                                <li><strong>Totem</strong> : g&eacute;n&eacute;ration de documents PDF</li>
+                                <li><strong>Alfresco</strong> : GED (Gestion &Eacute;lectronique de Documents)</li>
+                                <li><strong>COSI</strong> : signature &eacute;lectronique</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.65em; color: var(--spw-gray-medium); margin-top: 15px;">
+                        R&ocirc;le de l'&eacute;quipe plateforme : identifier, &eacute;vang&eacute;liser et documenter ces briques &ndash; pas les d&eacute;velopper.
+                    </p>
+                </section>
+
+                <!-- Bénéfices -->
+                <section data-visibility="hidden">
+                    <h3>B&eacute;n&eacute;fices Attendus</h3>
+                    <div class="bg-white" style="margin: 25px auto; padding: 25px; max-width: 700px; text-align: left; font-size: 0.75em;">
+                        <ol>
+                            <li style="margin-bottom: 10px;"><strong class="text-success">R&eacute;duction du temps d'onboarding</strong> des nouveaux d&eacute;veloppeurs</li>
+                            <li style="margin-bottom: 10px;"><strong class="text-success">R&eacute;duction des d&eacute;lais</strong> et augmentation de la fr&eacute;quence des mises en production</li>
+                            <li style="margin-bottom: 10px;"><strong class="text-info">Standardisation</strong> des pratiques de d&eacute;veloppement</li>
+                            <li style="margin-bottom: 10px;"><strong class="text-primary">S&eacute;curisation</strong> des applications</li>
+                            <li style="margin-bottom: 10px;"><strong class="text-warning">Gestion de l'obsolescence</strong></li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Roadmap -->
+                <section data-visibility="hidden">
+                    <h3>Roadmap</h3>
+                    <div style="text-align: left; font-size: 0.7em; max-width: 750px; margin: 25px auto;">
+                        <div style="border-left: 3px solid var(--spw-info); padding-left: 25px; margin-bottom: 25px;">
+                            <h4 style="color: var(--spw-info);">Court terme &ndash; Consolidation</h4>
+                            <!--                            <ul>-->
+                            <!--                                <li>Placeholder &mdash; &agrave; compl&eacute;ter</li>-->
+                            <!--                            </ul>-->
+                        </div>
+                        <div style="border-left: 3px solid var(--spw-positive); padding-left: 25px; margin-bottom: 25px;">
+                            <h4 style="color: var(--spw-positive);">Moyen terme &ndash; Acc&eacute;l&eacute;ration &amp; automatisation</h4>
+                            <!--                            <ul>-->
+                            <!--                                <li>Placeholder &mdash; &agrave; compl&eacute;ter</li>-->
+                            <!--                            </ul>-->
+                        </div>
+                        <div style="border-left: 3px solid var(--spw-primary); padding-left: 25px;">
+                            <h4 style="color: var(--spw-primary);">Long terme &ndash; Industrialisation &amp; mesure des gains</h4>
+                            <!--                            <ul>-->
+                            <!--                                <li>Placeholder &mdash; &agrave; compl&eacute;ter</li>-->
+                            <!--                            </ul>-->
+                        </div>
+                    </div>
+                    <p style="font-size: 0.7em; font-style: italic;">Une trajectoire ma&icirc;tris&eacute;e, pas un big bang.</p>
+                </section>
+            </section>
+
+            <!-- ===================== 5. CE QUE LE SPW A DÉJÀ ===================== -->
+            <section>
+                <section>
+                    <h2>Ce que le SPW a d&eacute;j&agrave; aujourd'hui</h2>
+                    <p style="margin-top: 40px; font-style: italic;">La plateforme SPW existe d&eacute;j&agrave;, elle est vivante et utilis&eacute;e.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Maintenant, la bonne nouvelle : on ne part pas de z&eacute;ro. La plateforme existe d&eacute;j&agrave;, elle est vivante, et surtout elle est utilis&eacute;e. On a des premiers retours positifs de la part des &eacute;quipes, notamment MaWallonie, Alta&iuml;s... Je vais vous montrer ce qu'on a construit. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Vue d'ensemble avec image Composants -->
+                <section data-transition="zoom">
+                    <h3>Vue d'Ensemble</h3>
+                    <img src="Plateforme Exp%C3%A9rience D%C3%A9veloppeur - Composants.png" alt="Sch&eacute;ma des composants de la plateforme" style="max-height: 75vh; max-width: 90%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" class="plain">
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Voici une vue d'ensemble de notre plateforme. Vous voyez trois grands blocs. En haut &agrave; gauche, les applications de d&eacute;monstration qui servent de vitrine. En bas, le framework avec toutes nos librairies r&eacute;utilisables. Et &agrave; droite, le portail d&eacute;veloppeur avec la documentation et le Design System. Les &eacute;l&eacute;ments en vert sont op&eacute;rationnels, en jaune c'est en cours, et en rose ce sont des d&eacute;pendances &agrave; d&eacute;finir. Je vais zoomer sur chacun de ces trois blocs. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Zoom 1 : Portail Documentation -->
+                <!-- Portail Développeur -->
+                <section data-transition="zoom">
+                    <h3>Portail D&eacute;veloppeur</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px auto; max-width: 800px; font-size: 0.6em; text-align: left;">
+                        <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-left: 4px solid #0064E6;">
+                            <h4 style="color: #0064E6; margin: 0 0 8px 0;">Tutoriels</h4>
+                            <p style="color: var(--spw-gray-medium); margin: 0 0 8px 0; font-size: 0.85em; font-style: italic;">Apprendre par la pratique</p>
+                            <ul style="margin: 1em;">
+                                <li>Cr&eacute;er sa premi&egrave;re application</li>
+                                <li>D&eacute;ployer sur un environnement</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-left: 4px solid #03C700;">
+                            <h4 style="color: #03C700; margin: 0 0 8px 0;">Guides</h4>
+                            <p style="color: var(--spw-gray-medium); margin: 0 0 8px 0; font-size: 0.85em; font-style: italic;">Comment faire&hellip;</p>
+                            <ul style="margin: 1em;">
+                                <li>Getting started</li>
+                                <li>Conventions de code</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-left: 4px solid #E0062A;">
+                            <h4 style="color: #E0062A; margin: 0 0 8px 0;">Explication</h4>
+                            <p style="color: var(--spw-gray-medium); margin: 0 0 8px 0; font-size: 0.85em; font-style: italic;">Comprendre le pourquoi</p>
+                            <ul style="margin: 1em;">
+                                <li>Consignes de d&eacute;veloppement</li>
+                                <li>Pourquoi cloud native ?</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-left: 4px solid #FFA100;">
+                            <h4 style="color: #FFA100; margin: 0 0 8px 0;">R&eacute;f&eacute;rence</h4>
+                            <p style="color: var(--spw-gray-medium); margin: 0 0 8px 0; font-size: 0.85em; font-style: italic;">Rechercher une info pr&eacute;cise</p>
+                            <ul style="margin: 1em;">
+                                <li>API &amp; services transverses</li>
+                                <li>Configuration Maven / Nexus</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; margin-top: 15px; font-style: italic;">Capitaliser et diffuser la connaissance plut&ocirc;t que la perdre.</p>
+                    <aside class="notes">
+                        Sans ce portail, chaque équipe réinvente la roue. Le métier attend pendant que les développeurs cherchent comment se connecter à Gestia.
+                        Exemple oral :
+                        &laquo; Premier bloc : le portail d&eacute;veloppeur. C'est le point d'entr&eacute;e unique pour toute la connaissance. On l'a structur&eacute; selon la m&eacute;thodologie Di&aacute;taxis, qui organise la documentation en quatre types compl&eacute;mentaires. Les tutoriels pour apprendre en faisant. Les guides pour r&eacute;soudre un probl&egrave;me concret. Les explications pour comprendre les choix d'architecture. Et les r&eacute;f&eacute;rences pour retrouver une info pr&eacute;cise rapidement. L'id&eacute;e cl&eacute; c'est de capitaliser la connaissance plut&ocirc;t que de la perdre &agrave; chaque d&eacute;part ou changement d'&eacute;quipe. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Zoom 2 : Framework -->
+                <!-- Framework & Librairies -->
+                <section data-transition="zoom">
+                    <h3>Framework &amp; Librairies</h3>
+                    <div style="text-align: left; font-size: 0.65em; max-width: 800px; margin: 20px auto;">
+                        <div style="display: flex; gap: 20px;">
+                            <div class="bg-white" style="flex: 1; padding: 20px;">
+                                <h4 style="color: var(--spw-primary);">Librairies</h4>
+                                <ul>
+                                    <li><strong>Spring Boot Parent POM</strong> <span style="color: var(--spw-positive);">&#x25CF;</span></li>
+                                    <li><strong>S&eacute;curit&eacute;</strong> (Gestia/Keycloak) <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                    <li><strong>GED</strong> (Alfresco) <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                    <li><strong>G&eacute;n&eacute;ration Doc</strong> (Totem) <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                    <li><strong>eSignature</strong> (COSI) <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                    <li><strong>Observabilit&eacute;</strong> <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                </ul>
+                            </div>
+                            <div class="bg-white" style="flex: 1; padding: 20px;">
+                                <h4 style="color: var(--spw-primary);">Blueprints</h4>
+                                <ul>
+                                    <li><strong>Backend</strong> <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                    <li><strong>Frontend</strong> <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                </ul>
+                                <h4 style="color: var(--spw-primary); margin-top: 20px;">Service</h4>
+                                <ul>
+                                    <li><strong>Anonymisation</strong> <span style="color: var(--spw-warning);">&#x25CF;</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.7em; margin-top: 15px; font-style: italic;">La standardisation lib&egrave;re du temps pour le m&eacute;tier.</p>
+                    <aside class="notes">
+                        Quand un développeur intègre Alfresco en 2h au lieu de 2 semaines, c'est 2 semaines de fonctionnalités métier en plus.
+                        Exemple oral :
+                        &laquo; Deuxi&egrave;me bloc : le framework. &Agrave; gauche, nos librairies. Le Parent POM Spring Boot est d&eacute;j&agrave; op&eacute;rationnel, c'est le point vert. Les autres &mdash; s&eacute;curit&eacute; avec Gestia/Keycloak, int&eacute;gration GED Alfresco, g&eacute;n&eacute;ration de documents Totem, signature &eacute;lectronique COSI, observabilit&eacute; &mdash; sont en cours de d&eacute;veloppement. &Agrave; droite, les blueprints : des squelettes d'application pr&ecirc;ts &agrave; l'emploi, backend et frontend, pour qu'une &eacute;quipe puisse d&eacute;marrer un nouveau projet en quelques heures au lieu de plusieurs jours. L'id&eacute;e c'est que la standardisation lib&egrave;re du temps pour se concentrer sur le m&eacute;tier. &raquo;
+                    </aside>
+                </section>
+
+
+                <!-- Zoom 3 : Applications Démo -->
+                <section data-transition="zoom">
+                    <h3>Applications de D&eacute;monstration</h3>
+                    <div style="display: flex; gap: 25px; justify-content: center; margin: 25px auto; font-size: 0.7em;">
+                        <div class="bg-white" style="flex: 1; max-width: 330px; padding: 22px;">
+                            <h4 style="color: var(--spw-warning);">App Legacy (VM)</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>D&eacute;ploiement sur VM traditionnelle</li>
+                                <li>Spring Boot + Angular</li>
+                                <li>Pipeline CI/CD standard</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white" style="flex: 1; max-width: 330px; padding: 22px;">
+                            <h4 style="color: var(--spw-warning);">App Cloud Native (Tanzu) <span style="color: var(--spw-positive); font-size: 0.7em;">&#x25CF; En Cours</span></h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>D&eacute;ploiement conteneuris&eacute;</li>
+                                <li>Spring Boot + Angular</li>
+                                <li>Pipeline cloud native</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; font-style: italic;">Montrer "comment faire", pas seulement "quoi faire".</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Troisi&egrave;me bloc : les applications de d&eacute;monstration. On en a deux. Une qui illustre un d&eacute;ploiement classique sur VM, Spring Boot plus Angular avec un pipeline CI/CD standard. Et une deuxi&egrave;me, en cours de d&eacute;veloppement, qui montre un d&eacute;ploiement cloud native sur Tanzu avec des conteneurs. Ces apps ne sont pas des POC jetables. Ce sont des vitrines vivantes qui montrent concr&egrave;tement comment utiliser le framework, les librairies, les pipelines. Le d&eacute;veloppeur peut s'en inspirer directement. On montre comment faire, pas seulement quoi faire. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Infrastructure DevSecOps -->
+                <section data-visibility="hidden">
+                    <h3>Infrastructure DevSecOps en place</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 25px auto; max-width: 800px; font-size: 0.65em;">
+                        <div style="background: var(--spw-white); padding: 15px 20px; border-radius: 8px; border-bottom: 3px solid var(--spw-info); text-align: center; min-width: 150px;">
+                            <strong>GitLab</strong><br/>Code source &amp; CI/CD
+                        </div>
+                        <div style="background: var(--spw-white); padding: 15px 20px; border-radius: 8px; border-bottom: 3px solid var(--spw-info); text-align: center; min-width: 150px;">
+                            <strong>Nexus Repository</strong><br/>Registry d'artefacts<br/>(Maven, npm, Docker)
+                        </div>
+                        <div style="background: var(--spw-white); padding: 15px 20px; border-radius: 8px; border-bottom: 3px solid var(--spw-primary); text-align: center; min-width: 150px;">
+                            <strong>Nexus Firewall</strong><br/>Scan vuln&eacute;rabilit&eacute;s<br/>des d&eacute;pendances
+                        </div>
+                        <div style="background: var(--spw-white); padding: 15px 20px; border-radius: 8px; border-bottom: 3px solid var(--spw-positive); text-align: center; min-width: 150px;">
+                            <strong>SonarQube</strong><br/>Qualit&eacute; &amp; s&eacute;curit&eacute;<br/>statique du code
+                        </div>
+                        <div style="background: var(--spw-white); padding: 15px 20px; border-radius: 8px; border-bottom: 3px solid var(--spw-primary); text-align: center; min-width: 150px;">
+                            <strong>Trivy</strong><br/>Scan de s&eacute;curit&eacute;<br/>des artefacts
+                        </div>
+                        <div style="background: var(--spw-white); padding: 15px 20px; border-radius: 8px; border-bottom: 3px solid var(--spw-warning); text-align: center; min-width: 150px;">
+                            <strong>SBOM</strong><br/>Inventaire composants<br/>&amp; librairies
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- Utilisateurs -->
+                <section>
+                    <h3>Utilisateurs</h3>
+                    <div style="display: flex; gap: 20px; justify-content: center; margin: 25px auto; max-width: 820px; font-size: 0.6em; text-align: left;">
+                        <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-top: 4px solid var(--spw-info); flex: 2;">
+                            <h4 style="color: var(--spw-info); margin: 0 0 10px 0;">&Eacute;quipes de d&eacute;veloppement</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">Gescaff</span>
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">Dafn&eacute;</span>
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">GeoViewer</span>
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">Alta&iuml;s</span>
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">Design System</span>
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">Urbi v2</span>
+                                <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">R&eacute;f. Entreprise</span>
+                            </div>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+                            <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-top: 4px solid var(--spw-primary);">
+                                <h4 style="color: var(--spw-primary); margin: 0 0 6px 0;">S&eacute;curit&eacute;</h4>
+<!--                                <p style="margin: 0; font-size: 0.9em;">Setup environnement de d&eacute;veloppement</p>-->
+                            </div>
+                            <div style="background: var(--spw-white); padding: 18px; border-radius: 6px; border-top: 4px solid var(--spw-warning);">
+                                <h4 style="color: var(--spw-warning); margin: 0 0 6px 0;">DEX</h4>
+<!--                                <p style="margin: 0; font-size: 0.9em;">Environnement de travail cloud (Python, &hellip;)</p>-->
+                                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                    <span style="background: #f5f5f5; padding: 6px 14px; border-radius: 15px;">Cloud</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; font-style: italic;">La plateforme est valid&eacute;e par l'usage, pas seulement par le concept.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Et la plateforme, elle est utilis&eacute;e. Pas en th&eacute;orie, en pratique. Vous voyez ici les &eacute;quipes de d&eacute;veloppement qui l'utilisent : Gescaff, Dafn&eacute;, GeoViewer, Alta&iuml;s, le Design System, Urbi v2, R&eacute;f&eacute;rentiel Entreprise. Mais pas seulement les d&eacute;veloppeurs : l'&eacute;quipe s&eacute;curit&eacute; utilise le portail &mdash; Florian par exemple s'en sert pour configurer son environnement de d&eacute;veloppement. Et l'&eacute;quipe DEX Cloud a fait appel &agrave; nous pour leur environnement de travail Python. La plateforme est valid&eacute;e par l'usage. &raquo;
+
+                        Lien suivi onboarding : <a href="https://walloniegov.sharepoint.com/:x:/r/sites/CCALM/Documents%20partages/G%C3%A9n%C3%A9ral/Suivi%20Projets%20onboarding/Suivi%20Onboarding%20Legacy%20MoE.xlsx?d=w4bb84f3dab7642fd8ead89ba8d7da898&csf=1&web=1&e=G0TYRn">Suivi Onboarding</a>
+                    </aside>
+                </section>
+
+                <!-- Support & Accompagnement -->
+                <section>
+                    <h3>Support &amp; Accompagnement</h3>
+                    <div style="text-align: left; font-size: 0.75em; max-width: 750px; margin: 25px auto;">
+                        <div style="display: flex; gap: 30px;">
+                            <div style="flex: 1;">
+                                <h4 style="color: var(--spw-positive);">Onboarding</h4>
+                                <ul>
+                                    <li>Accueil structur&eacute; des d&eacute;veloppeurs</li>
+                                    <li>Checklist d'int&eacute;gration</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="color: var(--spw-positive);">Workshops</h4>
+                                <ul>
+                                    <li>Java &amp; Spring Boot</li>
+                                    <li>Angular</li>
+                                    <li>Git &amp; GitLab CI/CD</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="color: var(--spw-positive);">Feedback</h4>
+                                <ul>
+                                    <li>Collecte de retours r&eacute;guliers</li>
+                                    <li>Am&eacute;lioration continue</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; margin-top: 15px; font-style: italic;">La plateforme &eacute;volue avec ses utilisateurs.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Au-del&agrave; des outils, il y a l'accompagnement humain. Quand un d&eacute;veloppeur arrive, il a un onboarding structur&eacute; avec une checklist d'int&eacute;gration. On organise des workshops r&eacute;guliers &mdash; Java, Spring Boot, Angular, Git, CI/CD &mdash; pour que les &eacute;quipes montent en comp&eacute;tence. Et surtout, on collecte du feedback en continu. La plateforme &eacute;volue avec ses utilisateurs, ce n'est pas quelque chose de fig&eacute;. &raquo;
+                    </aside>
+                </section>
+
+
+            </section>
+
+            <!-- ===================== 7. OFFRE EXTERNE NSI ===================== -->
+            <section>
+                <section>
+                    <h2>Offre NSI</h2>
+                    <h3 style="margin-top: 40px;">Analyse de l'approche</h3>
+                    <p style="font-size: 0.75em; color: var(--spw-gray-medium); margin-top: 20px;">Approche du développement logiciel &ndash; F&eacute;vrier 2026</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Vous avez assist&eacute; &agrave; la pr&eacute;sentation de NSI en f&eacute;vrier. Je vais revenir bri&egrave;vement sur ce qu'ils proposent, puis vous donner notre analyse. L'objectif n'est pas de critiquer leur offre &mdash; elle a de la valeur &mdash; mais de voir comment elle s'articule avec ce qu'on a d&eacute;j&agrave;. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Ce que propose NSI -->
+                <section>
+                    <h3>Ce que propose NSI</h3>
+                    <p style="font-size: 0.7em; margin-bottom: 20px;">3 piliers de leur approche du d&eacute;veloppement logiciel :</p>
+                    <div style="display: flex; gap: 20px; justify-content: center; margin: 20px auto; font-size: 0.65em; max-width: 800px;">
+                        <div style="background: #4A73C2; color: white; padding: 25px; border-radius: 8px; flex: 1; text-align: center;">
+                            <h4 style="color: white;">M&eacute;thodologie</h4>
+                            <ul style="text-align: left; font-size: 0.95em;">
+                                <li>Bas&eacute;e sur Agile</li>
+                                <li>&Eacute;quipes autonomes</li>
+                                <li>Outils : Jira, Bitbucket, Confluence</li>
+                                <li>Automatisations CI/CD</li>
+                            </ul>
+                        </div>
+                        <div style="background: #3CC4A0; color: white; padding: 25px; border-radius: 8px; flex: 1; text-align: center;">
+                            <h4 style="color: white;">Librairies</h4>
+                            <ul style="text-align: left; font-size: 0.95em;">
+                                <li><strong>JCube</strong> : librairies Java sur Spring Boot (s&eacute;curit&eacute;, acc&egrave;s donn&eacute;es, utilitaires)</li>
+                                <li><strong>NgCube</strong> : librairies Angular + PrimeNG + Tailwind</li>
+                            </ul>
+                        </div>
+                        <div style="background: #8AB038; color: white; padding: 25px; border-radius: 8px; flex: 1; text-align: center;">
+                            <h4 style="color: white;">G&eacute;n&eacute;rateurs</h4>
+                            <ul style="text-align: left; font-size: 0.95em;">
+                                <li>G&eacute;n&eacute;ration d'app vide (DB, Auth OIDC)</li>
+                                <li>G&eacute;n&eacute;rateur CRUD (via OpenAPI)</li>
+                                <li>Templates de layout</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.7em; margin-top: 15px; font-style: italic;">NSI apporte une expertise et un packaging &eacute;prouv&eacute;.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Pour rappel, l'offre NSI repose sur trois piliers. Leur m&eacute;thodologie : Agile, avec Jira, Bitbucket, Confluence et des automatisations CI/CD. Leurs librairies : JCube c&ocirc;t&eacute; Java sur Spring Boot, et NgCube c&ocirc;t&eacute; Angular avec PrimeNG et Tailwind. Et leurs g&eacute;n&eacute;rateurs : cr&eacute;ation d'applications vides avec authentification OIDC, et g&eacute;n&eacute;ration de CRUD &agrave; partir de sp&eacute;cifications OpenAPI. C'est bien packag&eacute;, c'est &eacute;prouv&eacute; chez eux. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Constat objectif -->
+                <section>
+                    <h3>Constat Objectif</h3>
+                    <p style="font-size: 0.75em; margin-bottom: 20px;">Principes d&eacute;j&agrave; pr&eacute;sents au SPW :</p>
+                    <div style="display: flex; gap: 25px; justify-content: center; margin: 20px auto; font-size: 0.7em; max-width: 750px;">
+                        <div class="bg-white" style="flex: 1; padding: 20px; text-align: center;">
+                            <h4 style="color: var(--spw-positive);">Agile</h4>
+                            <p>Pratiques agiles &eacute;tablies dans les &eacute;quipes SPW</p>
+                        </div>
+                        <div class="bg-white" style="flex: 1; padding: 20px; text-align: center;">
+                            <h4 style="color: var(--spw-positive);">DevSecOps</h4>
+                            <p>Pipeline CI/CD, scans s&eacute;curit&eacute;, qualit&eacute; du code</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.8em; margin-top: 25px;">
+                        <span class="highlight">L'enjeu n'est pas de repartir de z&eacute;ro.</span>
+                    </p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Mais quand on regarde objectivement, les principes de base &mdash; Agile et DevSecOps &mdash; sont d&eacute;j&agrave; en place chez nous. On a d&eacute;j&agrave; des pratiques agiles, on a d&eacute;j&agrave; des pipelines CI/CD, des scans de s&eacute;curit&eacute;, du contr&ocirc;le qualit&eacute; du code. Donc l'enjeu n'est pas de repartir de z&eacute;ro. La question c'est : qu'est-ce que NSI peut nous apporter en plus de ce qu'on a d&eacute;j&agrave; ? Par exemple, prenez le cas de DEX avec VKS : comment on fait passer cette information de mani&egrave;re centralis&eacute;e &agrave; toutes les &eacute;quipes ? C'est l&agrave; qu'une plateforme prend tout son sens. &raquo;
+                    </aside>
+                </section>
+            </section>
+
+            <!-- ===================== 8. APPROCHE HYBRIDE ===================== -->
+            <section>
+                <section>
+                    <h2>Approche Hybride Propos&eacute;e</h2>
+                    <h3 style="margin-top: 40px;">SPW owner, NSI acc&eacute;l&eacute;rateur</h3>
+                    <p style="font-size: 0.75em; margin-top: 30px; font-style: italic;">Le SPW garde la ma&icirc;trise, NSI apporte de la vitesse.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Alors, quelle est notre recommandation ? Une approche hybride. Le SPW reste propri&eacute;taire de sa plateforme, et NSI intervient comme acc&eacute;l&eacute;rateur sur des points pr&eacute;cis. On garde la ma&icirc;trise, ils apportent de la vitesse l&agrave; o&ugrave; on en a besoin. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Principes -->
+                <section>
+                    <h3>Principes</h3>
+                    <div style="display: flex; gap: 25px; justify-content: center; margin: 25px auto; font-size: 0.7em; max-width: 800px;">
+                        <div class="bg-white" style="flex: 1; padding: 22px; border-top: 4px solid var(--spw-primary);">
+                            <h4>SPW Digital reste propri&eacute;taire de</h4>
+                            <ul>
+                                <li>La <strong>vision</strong> de la plateforme</li>
+                                <li>La <strong>standardisation</strong> du socle technologique</li>
+                                <li>La <strong>plateforme</strong> elle-m&ecirc;me</li>
+                                <li>La <strong>gouvernance</strong></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white" style="flex: 1; padding: 22px; border-top: 4px solid var(--spw-info);">
+                            <h4>NSI intervient de mani&egrave;re cibl&eacute;e</h4>
+                            <ul>
+                                <li>Apport de <strong>composants</strong> sp&eacute;cifiques</li>
+                                <li><strong>Transfert</strong> de connaissances</li>
+                                <li><strong>Acc&eacute;l&eacute;ration</strong> ponctuelle</li>
+                                <li>Pas de d&eacute;pendance long terme</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Concr&egrave;tement, les r&ocirc;les sont clairs. Le SPW Digital reste propri&eacute;taire de la vision, de la standardisation, de la plateforme et de sa gouvernance. C'est non n&eacute;gociable. NSI intervient de mani&egrave;re cibl&eacute;e : apport de composants sp&eacute;cifiques, transfert de connaissances, acc&eacute;l&eacute;ration ponctuelle. Mais pas de d&eacute;pendance long terme. On ne veut pas se retrouver dans une situation o&ugrave; c'est NSI qui d&eacute;tient la cl&eacute; de notre plateforme. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Ce que NSI pourrait apporter concrètement -->
+                <section>
+                    <h3>Ce que NSI pourrait apporter</h3>
+                    <div style="text-align: left; font-size: 0.7em; max-width: 750px; margin: 25px auto;">
+                        <div class="bg-white" style="padding: 25px;">
+                            <h4 style="color: var(--spw-info);">Briques de solution cibl&eacute;es</h4>
+                            <ul>
+                                <li>G&eacute;n&eacute;rateurs cibl&eacute;s (CRUD, projets)</li>
+                                <li>Librairies r&eacute;utilisables adapt&eacute;es au contexte SPW</li>
+                            </ul>
+                            <h4 style="color: var(--spw-warning); margin-top: 20px;">Personnalisation SPW</h4>
+                            <ul>
+                                <li>Int&eacute;gration Design System SPW</li>
+                                <li>Playwright (tests E2E)</li>
+                                <li>Flyway (migrations DB)</li>
+                            </ul>
+                            <h4 style="color: var(--spw-positive); margin-top: 20px;">Support &agrave; l'int&eacute;gration</h4>
+                            <ul>
+                                <li>Accompagnement technique ponctuel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; font-style: italic;">Du sur-mesure, pas du cl&eacute;-en-main fig&eacute;.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Qu'est-ce qu'on pourrait prendre chez NSI concr&egrave;tement ? Leurs g&eacute;n&eacute;rateurs CRUD et de projets, c'est int&eacute;ressant, &ccedil;a acc&eacute;l&egrave;re le d&eacute;marrage. Des librairies r&eacute;utilisables qu'on adapterait &agrave; notre contexte. Ensuite on personnalise : int&eacute;gration du Design System SPW, ajout de Playwright pour les tests E2E, Flyway pour les migrations de base de donn&eacute;es. Et un accompagnement technique ponctuel. L'id&eacute;e c'est du sur-mesure, pas du cl&eacute;-en-main fig&eacute;. On s&eacute;lectionne, on adapte, on int&egrave;gre dans notre plateforme. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Approche "coach des coachs" -->
+                <section>
+                    <h3>Garder la maîtrise au SPW</h3>
+                    <div class="bg-white" style="margin: 30px auto; padding: 30px; max-width: 650px; text-align: left; font-size: 0.8em;">
+                        <p><strong style="color: var(--spw-info);">NSI forme des r&eacute;f&eacute;rents SPW</strong></p>
+                        <ul>
+                            <li>Transmission de la connaissance vers l'interne</li>
+                            <li>Autonomie progressive des &eacute;quipes SPW</li>
+                            <li>Le SPW capitalise sur l'investissement</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.8em; margin-top: 20px;">
+                        <span class="highlight">Investir dans les comp&eacute;tences internes plut&ocirc;t que dans la d&eacute;pendance.</span>
+                    </p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Un point essentiel : la transmission de comp&eacute;tences. Si on travaille avec NSI, ils forment nos r&eacute;f&eacute;rents internes. L'objectif c'est que progressivement, les &eacute;quipes SPW soient autonomes. On capitalise sur l'investissement. On ne cr&eacute;e pas une d&eacute;pendance, on construit de la comp&eacute;tence. C'est fondamentalement diff&eacute;rent d'un mod&egrave;le o&ugrave; le prestataire reste ind&eacute;finiment parce qu'il est le seul &agrave; ma&icirc;triser la solution. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Bénéfices de l'approche hybride -->
+                <section>
+                    <h3>B&eacute;n&eacute;fices de l'Approche Hybride</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 25px auto; max-width: 800px; font-size: 0.7em;">
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-positive); min-width: 200px; flex: 1;">
+                            <strong>Acc&eacute;l&eacute;ration</strong><br/>du delivery
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-primary); min-width: 200px; flex: 1;">
+                            <strong>R&eacute;duction</strong><br/>des risques
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-info); min-width: 200px; flex: 1;">
+                            <strong>Mont&eacute;e en comp&eacute;tence</strong><br/>interne
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid var(--spw-warning); min-width: 200px; flex: 1;">
+                            <strong>Ma&icirc;trise</strong><br/>des co&ucirc;ts
+                        </div>
+                        <div style="background: var(--spw-white); padding: 18px 22px; border-radius: 8px; border-left: 4px solid #9C27B0; min-width: 200px; flex: 1;">
+                            <strong>P&eacute;rennit&eacute;</strong><br/>de la solution
+                        </div>
+                    </div>
+                    <p style="font-size: 0.8em; margin-top: 20px; font-style: italic;">Le meilleur des deux mondes.</p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; En r&eacute;sum&eacute;, l'approche hybride nous donne le meilleur des deux mondes. Acc&eacute;l&eacute;ration du delivery &mdash; on va plus vite. R&eacute;duction des risques &mdash; on ne met pas tous nos &oelig;ufs dans le m&ecirc;me panier. Mont&eacute;e en comp&eacute;tence interne &mdash; on investit dans nos &eacute;quipes. Ma&icirc;trise des co&ucirc;ts &mdash; pas d'engagement long terme disproportionn&eacute;. Et p&eacute;rennit&eacute; &mdash; la solution nous appartient, elle survivra &agrave; n'importe quel changement de prestataire. &raquo;
+                    </aside>
+                </section>
+            </section>
+
+            <!-- ===================== 9. RISQUES & CRITÈRES ===================== -->
+            <section data-visibility="hidden">
+                <section>
+                    <h2>Risques &amp; Crit&egrave;res de D&eacute;cision</h2>
+                </section>
+
+                <!-- Risques & mitigations -->
+                <section>
+                    <h3>Risques &amp; Mitigations</h3>
+                    <table style="font-size: 0.55em; margin: 20px auto;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Risque</th>
+                                <th style="text-align: left;">Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Manque de capacit&eacute; &eacute;quipe plateforme</td>
+                                <td>Recrutements/formations cibl&eacute;es, externalisation ponctuelle</td>
+                            </tr>
+                            <tr>
+                                <td>R&eacute;sistance au changement</td>
+                                <td>Communication transparente, Quick Wins visibles, accompagnement</td>
+                            </tr>
+                            <tr>
+                                <td>Sous-estimation de la complexit&eacute;</td>
+                                <td>Approche progressive (MVP &rarr; industrialisation), r&eacute;ajustements</td>
+                            </tr>
+                            <tr>
+                                <td>Comp&eacute;tition avec prestataires existants</td>
+                                <td>Valoriser la compl&eacute;mentarit&eacute; (plateforme = socle, prestataires = m&eacute;tier)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Critères de décision -->
+                <section>
+                    <h3>Crit&egrave;res de D&eacute;cision</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 30px auto; max-width: 800px; font-size: 0.7em;">
+                        <div style="background: var(--spw-white); padding: 20px 25px; border-radius: 8px; border-bottom: 3px solid var(--spw-primary); min-width: 140px; text-align: center; flex: 1;">
+                            <strong>Ownership</strong>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 20px 25px; border-radius: 8px; border-bottom: 3px solid var(--spw-info); min-width: 140px; text-align: center; flex: 1;">
+                            <strong>&Eacute;volutivit&eacute;</strong>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 20px 25px; border-radius: 8px; border-bottom: 3px solid var(--spw-warning); min-width: 140px; text-align: center; flex: 1;">
+                            <strong>Co&ucirc;t total</strong>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 20px 25px; border-radius: 8px; border-bottom: 3px solid var(--spw-positive); min-width: 140px; text-align: center; flex: 1;">
+                            <strong>Autonomie</strong>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 20px 25px; border-radius: 8px; border-bottom: 3px solid #9C27B0; min-width: 140px; text-align: center; flex: 1;">
+                            <strong>Alignement strat&eacute;gique</strong>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.8em; margin-top: 25px;">
+                        <span class="highlight">D&eacute;cider sur des crit&egrave;res objectifs, pas sur l'effet vitrine.</span>
+                    </p>
+                </section>
+            </section>
+
+            <!-- ===================== 10. CONCLUSION ===================== -->
+            <section>
+                <section>
+                    <h2>Conclusion</h2>
+                    <div style="display: flex; gap: 20px; justify-content: center; margin: 30px auto; max-width: 800px; font-size: 0.65em; text-align: left;">
+                        <div style="background: var(--spw-white); padding: 20px; border-radius: 6px; border-left: 4px solid var(--spw-positive); flex: 1;">
+                            <h4 style="color: var(--spw-positive); margin: 0 0 8px 0;">Les fondations existent</h4>
+                            <p style="margin: 0;">Infrastructure DevSecOps, portail d&eacute;veloppeur, librairies, projets utilisateurs</p>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 20px; border-radius: 6px; border-left: 4px solid var(--spw-info); flex: 1;">
+                            <h4 style="color: var(--spw-info); margin: 0 0 8px 0;">Le SPW doit rester propri&eacute;taire</h4>
+                            <p style="margin: 0;">Autonomie technologique, pas de lock-in, mont&eacute;e en comp&eacute;tence interne</p>
+                        </div>
+                        <div style="background: var(--spw-white); padding: 20px; border-radius: 6px; border-left: 4px solid var(--spw-warning); flex: 1;">
+                            <h4 style="color: var(--spw-warning); margin: 0 0 8px 0;">NSI comme acc&eacute;l&eacute;rateur</h4>
+                            <p style="margin: 0;">Collaboration cibl&eacute;e, transfert de comp&eacute;tences, briques sur mesure</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.75em; margin-top: 25px;">
+                        Nous avons besoin de votre <strong>soutien pour p&eacute;renniser l'&eacute;quipe plateforme</strong> et poursuivre cette dynamique.
+                    </p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Pour conclure, trois messages cl&eacute;s. D'abord, les fondations existent &mdash; on a d&eacute;j&agrave; une infra DevSecOps, un portail, des librairies, des projets utilisateurs. Ensuite, le SPW doit rester propri&eacute;taire &mdash; c'est une question d'autonomie technologique. On ne veut pas de lock-in sur un framework propri&eacute;taire comme JCube ou NgCube dont la migration serait co&ucirc;teuse. Enfin, NSI peut jouer le r&ocirc;le d'acc&eacute;l&eacute;rateur cibl&eacute;, avec transfert de comp&eacute;tences. Et il y a un enjeu d'attractivit&eacute; aussi : les d&eacute;veloppeurs choisissent en fonction de l'outillage. Une plateforme moderne avec des outils open source est plus attractive que des outils propri&eacute;taires et des processus manuels. On a besoin de votre soutien pour p&eacute;renniser l'&eacute;quipe plateforme. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Next steps -->
+                <section>
+                    <h3>Prochaines étapes</h3>
+                    <div class="bg-white" style="margin: 30px auto; padding: 25px; max-width: 650px; text-align: left; font-size: 0.8em;">
+                        <ol>
+                            <li style="margin-bottom: 15px;"><strong class="text-primary">Valider la vision</strong> de la plateforme DevEx</li>
+                            <li style="margin-bottom: 15px;"><strong class="text-info">Confirmer l'approche produit</strong> (plateforme = produit interne)</li>
+                            <li style="margin-bottom: 15px;"><strong class="text-warning">Explorer une collaboration cibl&eacute;e</strong> avec NSI</li>
+                            <li><strong class="text-success">Lancer un pilote</strong> si pertinent</li>
+                        </ol>
+                    </div>
+                    <p style="font-size: 0.8em; margin-top: 25px;">
+                        <span class="highlight">Construire une plateforme durable au service du SPW.</span>
+                    </p>
+                    <aside class="notes">
+                        Exemple oral :
+                        &laquo; Voici les prochaines &eacute;tapes qu'on vous propose. D'abord, valider ensemble cette vision de la plateforme DevEx. Ensuite, confirmer l'approche produit &mdash; traiter la plateforme comme un vrai produit interne, pas comme un projet ponctuel. Troisi&egrave;mement, explorer une collaboration cibl&eacute;e avec NSI sur les points o&ugrave; ils peuvent nous apporter de la valeur. Et si c'est pertinent, lancer un pilote pour valider concr&egrave;tement l'approche. L'objectif : construire une plateforme durable, au service du SPW. &raquo;
+                    </aside>
+                </section>
+
+                <!-- Questions -->
+                <section>
+                    <h2>Questions ?</h2>
+                    <p style="margin-top: 80px; font-size: 0.9em;">
+                        Merci pour votre attention
+                    </p>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            plugins: [ RevealNotes ]
+        });
+    </script>
+</body>
+</html>
