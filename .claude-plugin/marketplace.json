@@ -1,0 +1,31 @@
+{
+  "name": "claude-code-plugins",
+  "owner": {
+    "name": "Pierre Saelens",
+    "email": "psaelens@gmail.com"
+  },
+  "description": "A personal collection of plugins for Claude Code — skills, agents, and MCP servers for real developer workflows.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "demo",
+      "source": "./plugins/demo",
+      "description": "A tech jargon explainer plugin showcasing Claude Code plugin capabilities: skills, MCP servers, and agents.",
+      "author": {
+        "name": "Pierre Saelens",
+        "email": "psaelens@gmail.com"
+      },
+      "keywords": ["demo", "jargon", "explainer", "wikipedia", "plain-language", "showcase"]
+    },
+    {
+      "name": "engineering",
+      "source": "./plugins/engineering",
+      "description": "Engineering toolkit: skills for software architects, developers, and technical writers.",
+      "author": {
+        "name": "Pierre Saelens",
+        "email": "psaelens@gmail.com"
+      },
+      "keywords": ["engineering", "writing", "documentation", "diataxis", "readme", "deslopify"]
+    }
+  ]
+}
